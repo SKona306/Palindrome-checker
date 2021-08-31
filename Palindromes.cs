@@ -3,40 +3,27 @@ using System.Collections.Generic;
 
 public class Palidrome 
 {
-  
+  public static void Main()
+  {
+    Console.WriteLine("Please enter a word uwu");
+    string userEntry = Console.ReadLine();
+    char[] arrPhrase = userEntry.ToCharArray();
+    int backwardsIndex = arrPhrase.Length - 1;
 
-}
-
-
-
-/*
-
-let palindrome = 1010;
-let isString = false;
-if (typeof(palindrome) === 'string') {
-	isString = true;
-}
-
-palindrome = palindrome.toString().split("");
-
-let forwardIndex = 0;
-let backwardIndex = palindrome.length - 1;
-let truePalindrome = true;
-
-while(forwardIndex < palindrome.length) {
-	if (isString) { 
-  	if(palindrome[forwardIndex].toUpperCase() !== palindrome[backwardIndex].toUpperCase()) {
-  	truePalindrome = false;
-    break;
+    bool truePalindrome = true;
+    foreach(char character in arrPhrase)
+    {
+      if (Char.ToUpper(arrPhrase[backwardsIndex]) != Char.ToUpper(character)) {
+        Console.WriteLine(arrPhrase[backwardsIndex] + " != " + character);
+        truePalindrome = false;
+        break;
+      }
+      backwardsIndex -= 1;
     }
-  } else if(palindrome[forwardIndex] !== palindrome[backwardIndex]){
-  	truePalindrome = false;
-    break;
+    if (truePalindrome) {
+      Console.WriteLine("gee whizz this is a palindrome");
+    } else {
+      Console.WriteLine("we can't all be racecars");
+    }
   }
-
-  forwardIndex += 1;
-  backwardIndex -= 1;
 }
-
-console.log(truePalindrome);
-*/
